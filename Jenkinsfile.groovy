@@ -4,12 +4,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                intentional errorlsadasdasf in for while eles if  if if 
                 echo 'Cloning the repository...'
-                git 'https://github.com/shiv727124/PES2UG22CS035_Jenkin'
+                git branch: 'main', url: 'https://github.com/shiv727124/PES2UG22CS035_Jenkin'
+                
                 script {
-                    // Assuming your .cpp file is located at the root of the repository
-                    sh 'g++ -o output_file_name your_cpp_file.cpp'
+                    // Replace 'hello.cpp' with the actual filename in your repo
+                    sh 'g++ -o output_file hello.cpp'
                 }
             }
         }
@@ -17,14 +17,16 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                // Add test commands here, e.g., 'mvn test'
+                script {
+                    sh './output_file'  // Run the compiled C++ program
+                }
             }
         }
         
         stage('Deploy') {
             steps {
                 echo 'Deploying the application...'
-                // Add deployment commands here, e.g., 'kubectl apply -f deployment.yaml'
+                // Add deployment commands here if needed
             }
         }
     }
@@ -32,11 +34,9 @@ pipeline {
     post {
         success {
             echo 'Pipeline executed successfully!'
-            // Add any post-success actions here
         }
         failure {
             echo 'Pipeline execution failed!'
-            // Add any post-failure actions here
         }
     }
 }
