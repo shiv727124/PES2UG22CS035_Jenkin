@@ -6,7 +6,7 @@ pipeline {
             steps {
                 intentional errorlsadasdasf in for while eles if  if if 
                 echo 'Cloning the repository...'
-                git 'https://github.com/dantesbane/PES2UG21CS275_jenkins'
+                git 'https://github.com/shiv727124/PES2UG22CS035_Jenkin'
                 script {
                     // Assuming your .cpp file is located at the root of the repository
                     sh 'g++ -o output_file_name your_cpp_file.cpp'
