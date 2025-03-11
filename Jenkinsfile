@@ -9,7 +9,7 @@ pipeline {
                 
                 script {
                     // Replace 'hello.cpp' with the actual filename in your repo
-                    sh 'g++ -o output_file hello.cpp'
+                     sh 'g++ -o output_file main/hello.cpp'
                 }
             }
         }
