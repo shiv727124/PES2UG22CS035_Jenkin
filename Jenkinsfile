@@ -8,7 +8,7 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/shiv727124/PES2UG22CS035_Jenkin'
                 
                 script {
-                    // Replace 'hello.cpp' with the actual filename in your repo
+                    
                      sh 'g++ -o output_file main/hello.cpp'
                 }
             }
@@ -18,7 +18,7 @@ pipeline {
             steps {
                 echo 'Running tests...'
                 script {
-                    sh './output_file'  // Run the compiled C++ program
+                    sh './output_file' 
                 }
             }
         }
@@ -26,7 +26,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying the application...'
-                // Add deployment commands here if needed
+              
             }
         }
     }
